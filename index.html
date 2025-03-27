@@ -46,12 +46,13 @@
     <h1>顏威裕醫院</h1>
     <p>地址：高雄市楠梓區後昌路826號</p>
   </header>
-  <nav>
-    <a href="#">首頁</a>
-    <a href="#">醫師團隊</a>
-    <a href="#">診療項目</a>
+ <nav>
+    <a onclick="showSection('home')">首頁</a>
+    <a onclick="showSection('team')">醫師團隊</a>
+    <a onclick="showSection('services')">診療項目</a>
   </nav>
   <div class="container">
+    <!-- 首頁 -->
     <section id="home">
       <h2>關於我們</h2>
       <p>電話號碼： 07 363 9053</p>
@@ -60,7 +61,9 @@
       <p>星期五、星期六	08:00–11:40, 14:00–17:20</p>
       <p>星期日	休息</p>
     </section>
-    <section id="menu" style="display: none;">
+
+    <!-- 醫師團隊 -->
+    <section id="team">
       <h2>醫師團隊</h2>
       <div class="menu-item">
         <h3>顏威裕院長</h3>
@@ -73,19 +76,35 @@
         <h3>董振楨醫師</h3>
         <p>曾任家寶診所骨科主治醫師</p>
       </div>
-      <!-- 可以繼續增加其他菜品 -->
+    </section>
+
+    <!-- 診療項目 -->
+    <section id="services">
+      <h2>診療項目</h2>
+      <div class="menu-item">
+        <h3>骨科診療</h3>
+        <p>骨折、關節疾病、運動傷害等診斷與治療</p>
+      </div>
+      <div class="menu-item">
+        <h3>復健治療</h3>
+        <p>提供物理治療、運動復健及疼痛管理</p>
+      </div>
+      <div class="menu-item">
+        <h3>關節置換手術</h3>
+        <p>人工關節置換手術，改善關節退化問題</p>
+      </div>
     </section>
   </div>
+
   <script>
-    // 切換首頁和醫師團隊的顯示
-    document.querySelector('nav a:nth-child(1)').addEventListener('click', function() {
-      document.getElementById('home').style.display = 'block';
-      document.getElementById('menu').style.display = 'none';
-    });
-    document.querySelector('nav a:nth-child(2)').addEventListener('click', function() {
-      document.getElementById('home').style.display = 'none';
-      document.getElementById('menu').style.display = 'block';
-    });
+    function showSection(sectionId) {
+      // 隱藏所有 section
+      document.querySelectorAll("section").forEach(section => {
+        section.style.display = "none";
+      });
+      // 顯示被點擊的 section
+      document.getElementById(sectionId).style.display = "block";
+    }
   </script>
 </body>
 </html>
