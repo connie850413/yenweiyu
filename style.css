@@ -1,6 +1,6 @@
-hr {
+.divider {
   border: 0;
   height: 2px;
   background: #005b96; /* 設定藍色 */
-  margin: 1.5rem 0;
+  margin: 1.5rem 0 2rem; /* 調整上下間距 (上 1.5rem，下 2rem) */
 }
